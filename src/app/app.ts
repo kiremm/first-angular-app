@@ -1,13 +1,15 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+
 import { HeaderComponent } from './header/header.component';
 import { User } from './user/user';
+import { DUMMY_USERS } from './user/dummy-users';
+
 @Component({
-  imports: [HeaderComponent , User, RouterOutlet],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
+    imports: [HeaderComponent , User],
 })
 export class App {
-  protected readonly title = signal('first-angular-app');
+  users = DUMMY_USERS;
 }
